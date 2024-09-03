@@ -1,0 +1,18 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files
+      uses: Michelle-HP/FTP-Deploy-Action@4.3.4
+      with:
+        server: ftp.Michelle-HP.com
+        username: Michelle-HP
+        password: HoopDawg9633
+        protocol: ftps
+        server-dir: public_html/demo-website-uno/
